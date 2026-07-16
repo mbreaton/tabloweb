@@ -1,0 +1,21 @@
+services:
+    tablo-web:
+        image: registry.docker.home/tablo4u
+        container_name: tablo-web
+        networks:
+            - nginx
+        environment:
+            - TZ=EST
+            - ADMIN_PASSWORD=pass
+            - TABLO_EMAIL
+            - TABLO_PASSWORD
+        # volumes:
+        depends_on:
+            - nginx
+        restart: unless-stopped
+    tablo:
+        image: busybox
+        container_name: retirement
+        depends_on:
+            - tablo-web
+        restart: no
