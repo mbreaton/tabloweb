@@ -1,0 +1,1 @@
+docker build $PSScriptRoot/Tablo4U --tag registry.docker.home/tablo4u
