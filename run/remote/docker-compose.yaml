@@ -15,7 +15,7 @@ services:
         restart: unless-stopped
     tablo:
         image: busybox
-        container_name: retirement
+        container_name: tablo
         depends_on:
             - tablo-web
         restart: no
